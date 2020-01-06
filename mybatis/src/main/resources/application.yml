@@ -1,0 +1,22 @@
+#输出mybatis的sql
+logging:
+  level:
+    #这是你的mapper包路径。
+    com.pilaf.mybatis.db1.mapper.*: debug
+    com.pilaf.mybatis.db2.mapper.*: debug
+
+
+#两个数据库配置
+spring:
+   datasource:
+      db1:
+          # 下面的配置项可以看com.zaxxer.hikari.HikariConfig的字段
+          driverClassName: com.mysql.jdbc.Driver
+          jdbcUrl: jdbc:mysql://localhost:3306/db1?characterEncoding=utf8&useSSL=false
+          username: root
+          password: root
+      db2:
+          driverClassName: com.mysql.jdbc.Driver
+          jdbcUrl: jdbc:mysql://localhost:3306/db2?characterEncoding=utf8&useSSL=false
+          username: root
+          password: root
