@@ -1,7 +1,7 @@
-package com.pilaf.mybatis.service;
+package com.pilaf.mybatisplus.service;
 
-import com.pilaf.mybatis.db1.entity.Student;
-import com.pilaf.mybatis.db2.entity.Teacher;
+import com.pilaf.mybatisplus.db1.entity.Student;
+import com.pilaf.mybatisplus.db2.entity.Teacher;
 
 /**
  * @description: 涉及到更改db1和db2的服务

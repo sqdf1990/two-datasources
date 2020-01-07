@@ -1,4 +1,4 @@
-package com.pilaf.mybatis.aspect;
+package com.pilaf.mybatisplus.aspect;
 
 import com.pilaf.common.DatabaseContextHolder;
 import com.pilaf.common.DatabaseEnum;
@@ -28,7 +28,7 @@ public class DatabaseSwitchAspect {
      * db1的Service类中所有带Transactional注解注释的方法
      * 因为@Transactional注解会导致在Service层就需要确定访问的数据源
      */
-    @Pointcut("execution(* com.pilaf.mybatis.service.db1.*.*(..)) && @annotation(org.springframework.transaction.annotation.Transactional)")
+    @Pointcut("execution(* com.pilaf.mybatisplus.service.db1.*.*(..)) && @annotation(org.springframework.transaction.annotation.Transactional)")
     private void db1TransactionalServiceMethod() {
 
     }
@@ -36,7 +36,7 @@ public class DatabaseSwitchAspect {
     /**
      * db1的pointcut由db1的mapper接口中所有方法和db1的带有@Transactional注解的方法组成
      */
-    @Pointcut("execution(* com.pilaf.mybatis.db1.mapper..*.*(..)) || db1TransactionalServiceMethod()")
+    @Pointcut("execution(* com.pilaf.mybatisplus.db1.mapper..*.*(..)) || db1TransactionalServiceMethod()")
     private void db1Pointcut() {
 
     }
@@ -61,7 +61,7 @@ public class DatabaseSwitchAspect {
      * db2的Service类中所有带Transactional注解注释的方法
      * 因为@Transactional注解会导致在Service层就需要确定访问的数据源
      */
-    @Pointcut("execution(* com.pilaf.mybatis.service.db2.*.*(..)) && @annotation(org.springframework.transaction.annotation.Transactional)")
+    @Pointcut("execution(* com.pilaf.mybatisplus.service.db2.*.*(..)) && @annotation(org.springframework.transaction.annotation.Transactional)")
     private void db2TransactionalServiceMethod() {
 
     }
@@ -69,7 +69,7 @@ public class DatabaseSwitchAspect {
     /**
      * db2的pointcut由db1的mapper接口中所有方法和db1的带有@Transactional注解的方法组成
      */
-    @Pointcut("execution(* com.pilaf.mybatis.db2.mapper..*.*(..)) || db2TransactionalServiceMethod()")
+    @Pointcut("execution(* com.pilaf.mybatisplus.db2.mapper..*.*(..)) || db2TransactionalServiceMethod()")
     private void db2Pointcut() {
 
     }

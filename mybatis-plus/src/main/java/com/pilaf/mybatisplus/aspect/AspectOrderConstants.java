@@ -1,4 +1,4 @@
-package com.pilaf.mybatis.aspect;
+package com.pilaf.mybatisplus.aspect;
 
 /**
  * @description: 切面的order越小优先级越高，beforeAdvice越先执行
@@ -28,7 +28,6 @@ package com.pilaf.mybatis.aspect;
  * @author: pilaf
  * @create: 2020-01-06 15:55
  */
-@SuppressWarnings("all")
 public interface AspectOrderConstants {
     /**
      * 切换数据源切面（要在事务开始前就切换数据源，否则事务方法拿不到对的数据源）

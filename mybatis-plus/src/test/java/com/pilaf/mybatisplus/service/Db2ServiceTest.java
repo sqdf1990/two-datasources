@@ -1,8 +1,8 @@
-package com.pilaf.mybatis.service;
+package com.pilaf.mybatisplus.service;
 
-import com.pilaf.mybatis.MyTestSpringApplication;
-import com.pilaf.mybatis.db2.entity.Teacher;
-import com.pilaf.mybatis.service.db2.Db2Service;
+import com.pilaf.mybatisplus.MyTestSpringApplication;
+import com.pilaf.mybatisplus.db2.entity.Teacher;
+import com.pilaf.mybatisplus.service.db2.Db2Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

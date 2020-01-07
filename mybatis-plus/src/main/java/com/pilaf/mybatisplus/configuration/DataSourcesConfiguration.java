@@ -1,8 +1,10 @@
-package com.pilaf.mybatis.configuration;
+package com.pilaf.mybatisplus.configuration;
 
+import com.baomidou.mybatisplus.core.MybatisConfiguration;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.pilaf.common.DatabaseContextHolder;
 import com.pilaf.common.DatabaseEnum;
-import com.pilaf.mybatis.aspect.AspectOrderConstants;
+import com.pilaf.mybatisplus.aspect.AspectOrderConstants;
 import org.apache.ibatis.session.LocalCacheScope;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -88,9 +90,10 @@ public class DataSourcesConfiguration {
         try {
 
             //注意MyBatis-Plus和MyBatis的sqlSessionFactory的创建过程有区别
-            SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+            //这儿不要用原生的SqlSessionFactory，否则会报BindingException: Invalid bound statement (not found)
+            MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
 
-            org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+            MybatisConfiguration configuration = new MybatisConfiguration();
             configuration.setMapUnderscoreToCamelCase(true);
             configuration.setLocalCacheScope(LocalCacheScope.STATEMENT);
             configuration.setCacheEnabled(false);
@@ -98,10 +101,10 @@ public class DataSourcesConfiguration {
             bean.setConfiguration(configuration);
             bean.setDataSource(dynamicDataSource(db1DataSource(),db2DataSource()));
             bean.setMapperLocations(
-                    new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml")
+                    new PathMatchingResourcePatternResolver().getResources("classpath:com/pilaf/mybatisplus/*/xml/mapper/*.xml")
             );
             //TypeAliasesPackage支持通配符
-            bean.setTypeAliasesPackage("com.pilaf.mybatis.*.entity");
+            bean.setTypeAliasesPackage("com.pilaf.mybatisplus.*.entity");
 
             sqlSessionFactory = bean.getObject();
         } catch (Exception e) {

@@ -1,8 +1,9 @@
-package com.pilaf.mybatis.service;
+package com.pilaf.mybatisplus.service;
 
-import com.pilaf.mybatis.MyTestSpringApplication;
-import com.pilaf.mybatis.db2.entity.Teacher;
-import com.pilaf.mybatis.service.db2.Db2Service;
+
+import com.pilaf.mybatisplus.MyTestSpringApplication;
+import com.pilaf.mybatisplus.db1.entity.Student;
+import com.pilaf.mybatisplus.service.db1.Db1Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,32 +21,32 @@ import java.util.Arrays;
  */
 @SuppressWarnings("all")
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {MyTestSpringApplication.class, Db2ServiceTest.class})
+@SpringBootTest(classes = {MyTestSpringApplication.class, Db1ServiceTest.class})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class Db2ServiceTest {
+public class Db1ServiceTest {
 
     @Autowired
-    private Db2Service db2Service;
+    private Db1Service db1Service;
 
     @Test
     public void should_insert(){
-        Teacher teacher = new Teacher();
-        teacher.setName("慕容博");
-        teacher.setStudentCnt(1);
-        
-        db2Service.insert(teacher);
+        Student student = new Student();
+        student.setName("鸠摩智");
+        student.setAge(50);
+
+        db1Service.insert(student);
     }
-    
-    
+
+
     @Test
     public void should_not_insert(){
-        Teacher teacher1 = new Teacher();
-        teacher1.setName("郭靖");
-        teacher1.setStudentCnt(60);
+        Student student1 = new Student();
+        student1.setName("天山童姥");
+        student1.setAge(60);
 
-        Teacher teacher2 = new Teacher();
-        teacher2.setName("黄蓉");
-        teacher2.setStudentCnt(3);
-        db2Service.batchInsert(Arrays.asList(teacher1,teacher2));
+        Student student2 = new Student();
+        student2.setName("无崖子");
+        student2.setAge(70);
+        db1Service.batchInsert(Arrays.asList(student1,student2));
     }
 }

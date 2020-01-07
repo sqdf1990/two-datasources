@@ -18,6 +18,7 @@ import java.util.Arrays;
  * @author: pilaf
  * @create: 2020-01-06 20:14
  */
+@SuppressWarnings("all")
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {MyTestSpringApplication.class, Db1ServiceTest.class})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
