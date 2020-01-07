@@ -25,7 +25,7 @@ package com.pilaf.mybatis.aspect;
  *
  * @see DatabaseSwitchAspect
  * @see org.springframework.transaction.annotation.EnableTransactionManagement
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2020-01-06 15:55
  */
 public interface AspectOrderConstants {

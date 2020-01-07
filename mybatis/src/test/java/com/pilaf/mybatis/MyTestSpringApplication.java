@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @description: 单元测试启动类
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2020-01-06 20:12
  */
 @SpringBootApplication

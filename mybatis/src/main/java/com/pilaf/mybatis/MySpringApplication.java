@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description: 演示简单的双数据源，即不需要跨库事务的场景，支持单库事务。
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2020-01-06 17:32
  */
 @SpringBootApplication

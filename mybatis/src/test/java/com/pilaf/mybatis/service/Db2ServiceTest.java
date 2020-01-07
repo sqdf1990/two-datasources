@@ -15,7 +15,7 @@ import java.util.Arrays;
 /**
  * @description:  不是真正的单元测试，真正的单元测试是可重复，与具体某个人的数据库无关，应该随时随地都可以运行。
  * TODO 暂时先不模拟两个H2数据库的情况，后续改成两个H2内存数据库，实现真正的单元测试
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2020-01-06 20:14
  */
 @RunWith(SpringRunner.class)

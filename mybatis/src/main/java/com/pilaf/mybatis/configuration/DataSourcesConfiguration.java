@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 
 /**
  * @description: 配置多个数据源，每个数据源对应一个mysql的database
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2019-12-19 14:47
  */
 @Configuration

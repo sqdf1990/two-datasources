@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @description: 由于代码不涉及到在一个service方法中同时修改db1、db2库，所以可以在service方法中就确定访问哪个数据源
  * pointcut表达式参考：https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#aop-pointcuts
  *
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2019-12-23 12:03
  */
 @Slf4j

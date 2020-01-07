@@ -5,7 +5,7 @@ import com.pilaf.mybatis.db2.entity.Teacher;
 
 /**
  * @description: 涉及到更改db1和db2的服务
- * @author: dufeng3
+ * @author: pilaf
  * @create: 2020-01-06 20:17
  */
 public interface ComposedService {
